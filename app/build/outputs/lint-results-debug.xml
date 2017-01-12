@@ -1,0 +1,3795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 25.1.7">
+
+    <issue
+        id="ScrollViewSize"
+        severity="Warning"
+        message="This LinearLayout should use `android:layout_height=&quot;wrap_content&quot;`"
+        category="Correctness"
+        priority="7"
+        summary="ScrollView size validation"
+        explanation="ScrollView children must set their `layout_width` or `layout_height` attributes to `wrap_content` rather than `fill_parent` or `match_parent` in the scrolling dimension"
+        errorLine1="     android:layout_height=&quot;fill_parent&quot;"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\get_from_wx.xml"
+            line="8"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ScrollViewSize"
+        severity="Warning"
+        message="This LinearLayout should use `android:layout_height=&quot;wrap_content&quot;`"
+        category="Correctness"
+        priority="7"
+        summary="ScrollView size validation"
+        explanation="ScrollView children must set their `layout_width` or `layout_height` attributes to `wrap_content` rather than `fill_parent` or `match_parent` in the scrolling dimension"
+        errorLine1="     android:layout_height=&quot;fill_parent&quot;"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\send_to_wx.xml"
+            line="8"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        targetSdkVersion 22"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\build.gradle"
+            line="10"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SdCardPath"
+        severity="Warning"
+        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead"
+        category="Correctness"
+        priority="6"
+        summary="Hardcoded reference to `/sdcard`"
+        explanation="Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.
+
+Similarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
+        url="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        urls="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        errorLine1="    CameraUtil.takePhoto(GetFromWXActivity.this, &quot;/mnt/sdcard/tencent/&quot;, &quot;get_appdata&quot;, 0x100);"
+        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\java\net\sourceforge\simcpux\GetFromWXActivity.java"
+            line="186"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="SdCardPath"
+        severity="Warning"
+        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead"
+        category="Correctness"
+        priority="6"
+        summary="Hardcoded reference to `/sdcard`"
+        explanation="Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.
+
+Similarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
+        url="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        urls="http://developer.android.com/guide/topics/data/data-storage.html#filesExternal"
+        errorLine1="    final String path = CameraUtil.getResultPhotoPath(this, data, &quot;/mnt/sdcard/tencent/&quot;);"
+        errorLine2="                                                                  ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\java\net\sourceforge\simcpux\GetFromWXActivity.java"
+            line="204"
+            column="67"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        severity="Warning"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)"
+        category="Correctness"
+        priority="5"
+        summary="Layout Inflation without a Parent"
+        explanation="When inflating a layout, avoid passing in null as the parent view, since otherwise any layout parameters on the root of the inflated layout will be ignored."
+        url="http://www.doubleencore.com/2013/05/layout-inflation-as-intended"
+        urls="http://www.doubleencore.com/2013/05/layout-inflation-as-intended"
+        errorLine1="  LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.alert_dialog_menu_layout, null);"
+        errorLine2="                                                                                           ~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\java\net\sourceforge\simcpux\uikit\MMAlert.java"
+            line="363"
+            column="92"/>
+    </issue>
+
+    <issue
+        id="GradleOverrides"
+        severity="Warning"
+        message="This `minSdkVersion` value (`4`) is not used; it is always overridden by the value specified in the Gradle build script (`9`)"
+        category="Correctness"
+        priority="4"
+        summary="Value overridden by Gradle build script"
+        explanation="The value of (for example) `minSdkVersion` is only used if it is not specified in the `build.gradle` build scripts. When specified in the Gradle build scripts, the manifest value is ignored and can be misleading, so should be removed to avoid ambiguity."
+        errorLine1="    &lt;uses-sdk android:minSdkVersion=&quot;4&quot; />"
+        errorLine2="              ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\AndroidManifest.xml"
+            line="7"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="This dimension is used as a text size: Should use &quot;`sp`&quot; instead of &quot;`dp`&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="    &lt;dimen name=&quot;LargeTextSize&quot;>16dp&lt;/dimen>"
+        errorLine2="                                ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="4"
+            column="33"/>
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\alert_dialog_menu_list_layout_title.xml"
+            line="22"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="This dimension is used as a text size: Should use &quot;`sp`&quot; instead of &quot;`dp`&quot;"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="    &lt;dimen name=&quot;TitleTextSize&quot;>18dp&lt;/dimen>"
+        errorLine2="                                ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="6"
+            column="33"/>
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\sendrequest_dialog.xml"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="   android:textSize=&quot;20dp&quot;"
+        errorLine2="   ~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\entry.xml"
+            line="10"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="   android:textSize=&quot;20dp&quot;"
+        errorLine2="   ~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\show_from_wx.xml"
+            line="11"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>19dp&lt;/item>"
+        errorLine2="                                      ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="20"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>16dp&lt;/item>"
+        errorLine2="                                      ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="117"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>14dp&lt;/item>"
+        errorLine2="                                      ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="214"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>12dp&lt;/item>"
+        errorLine2="                                      ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="321"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>13dp&lt;/item>"
+        errorLine2="                                      ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="409"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        severity="Warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes"
+        category="Correctness"
+        priority="3"
+        summary="Using `dp` instead of `sp` for text sizes"
+        explanation="When setting text sizes, you should normally use `sp`, or &quot;scale-independent pixels&quot;. This is like the `dp` unit, but it is also scaled by the user&apos;s font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and the user&apos;s preference.
+
+There *are* cases where you might need to use `dp`; typically this happens when the text is in a container with a specific dp-size. This will prevent the text from spilling outside the container. Note however that this means that the user&apos;s font size settings are not respected, so consider adjusting the layout itself to be more flexible."
+        url="http://developer.android.com/training/multiscreen/screendensities.html"
+        urls="http://developer.android.com/training/multiscreen/screendensities.html"
+        errorLine1="        &lt;item name=&quot;android:textSize&quot;>14dp&lt;/item>"
+        errorLine2="                                      ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="416"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: False is the default, so just remove the attribute"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="        android:singleLine=&quot;false&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\alert_dialog_menu_list_layout_title.xml"
+            line="20"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="            android:singleLine=&quot;true&quot;/>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="24"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="            android:singleLine=&quot;true&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="29"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="   android:singleLine=&quot;true&quot; android:textAppearance=&quot;@style/MMPreferenceTextLarge&quot; />"
+        errorLine2="   ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_child.xml"
+            line="8"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="  android:singleLine=&quot;true&quot; />"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_choice.xml"
+            line="15"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="  android:singleLine=&quot;true&quot; />"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmail.xml"
+            line="17"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="  android:singleLine=&quot;true&quot; />"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmail.xml"
+            line="22"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="   android:singleLine=&quot;true&quot; />"
+        errorLine2="   ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="22"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="   android:singleLine=&quot;true&quot; />"
+        errorLine2="   ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="27"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="  android:singleLine=&quot;true&quot; />"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="34"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="  android:singleLine=&quot;true&quot; />"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="40"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: False is the default, so just remove the attribute"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="            android:singleLine=&quot;false&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="21"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: False is the default, so just remove the attribute"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="        android:singleLine=&quot;false&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="38"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: False is the default, so just remove the attribute"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="  android:singleLine=&quot;false&quot;/>"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_self_vuser.xml"
+            line="21"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: Use `maxLines=&quot;1&quot;` instead"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="                android:singleLine=&quot;true&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\security_image.xml"
+            line="46"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        severity="Warning"
+        message="`android:singleLine` is deprecated: False is the default, so just remove the attribute"
+        category="Correctness"
+        priority="2"
+        summary="Using deprecated resources"
+        explanation="Deprecated views, attributes and so on are deprecated because there is a better way to do something. Do it that new way. You&apos;ve been warned."
+        errorLine1="        android:singleLine=&quot;false&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\sendrequest_dialog.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Orientation"
+        severity="Error"
+        message="No orientation specified, and the default is horizontal. This is a common source of bugs when children are added dynamically."
+        category="Correctness"
+        priority="2"
+        summary="Missing explicit orientation"
+        explanation="The default orientation of a LinearLayout is horizontal. It&apos;s pretty easy to believe that the layout is vertical, add multiple children to it, and wonder why only the first child is visible (when the subsequent children are off screen to the right). This lint rule helps pinpoint this issue by warning whenever a LinearLayout is used with an implicit orientation and multiple children.
+
+It also checks for empty LinearLayouts without an `orientation` attribute that also defines an `id` attribute. This catches the scenarios where children will be added to the `LinearLayout` dynamically. "
+        errorLine1=" &lt;LinearLayout android:id=&quot;@+android:id/widget_frame&quot; android:layout_width=&quot;wrap_content&quot;"
+        errorLine2=" ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_child.xml"
+            line="15"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="Orientation"
+        severity="Error"
+        message="No orientation specified, and the default is horizontal. This is a common source of bugs when children are added dynamically."
+        category="Correctness"
+        priority="2"
+        summary="Missing explicit orientation"
+        explanation="The default orientation of a LinearLayout is horizontal. It&apos;s pretty easy to believe that the layout is vertical, add multiple children to it, and wonder why only the first child is visible (when the subsequent children are off screen to the right). This lint rule helps pinpoint this issue by warning whenever a LinearLayout is used with an implicit orientation and multiple children.
+
+It also checks for empty LinearLayouts without an `orientation` attribute that also defines an `id` attribute. This catches the scenarios where children will be added to the `LinearLayout` dynamically. "
+        errorLine1="    &lt;LinearLayout"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_null.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        severity="Warning"
+        message="Should explicitly set `android:allowBackup` to `true` or `false` (it&apos;s `true` by default, and that can have some security implications for the application&apos;s data)"
+        category="Security"
+        priority="3"
+        summary="AllowBackup/FullBackupContent Problems"
+        explanation="The `allowBackup` attribute determines if an application&apos;s data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup
+
+By default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.
+
+This may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.
+
+Setting `allowBackup=&quot;false&quot;` opts an application out of both backup and restore.
+
+To fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)&quot;`.
+
+If not set to false, and if targeting API 23 or later, lint will also warn that you should set `android:fullBackupContent` to configure auto backup."
+        url="https://developer.android.com/training/backup/autosyncapi.html"
+        urls="https://developer.android.com/training/backup/autosyncapi.html,http://developer.android.com/reference/android/R.attr.html#allowBackup"
+        errorLine1="    &lt;application"
+        errorLine2="    ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\AndroidManifest.xml"
+            line="13"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UseCompoundDrawables"
+        severity="Warning"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable"
+        category="Performance"
+        priority="6"
+        summary="Node can be replaced by a `TextView` with compound drawables"
+        explanation="A `LinearLayout` which contains an `ImageView` and a `TextView` can be more efficiently handled as a compound drawable (a single TextView, using the `drawableTop`, `drawableLeft`, `drawableRight` and/or `drawableBottom` attributes to draw one or more images adjacent to the text).
+
+If the two widgets are offset from each other with margins, this can be replaced with a `drawablePadding` attribute.
+
+There&apos;s a lint quickfix to perform this conversion in the Eclipse plugin."
+        errorLine1="    &lt;LinearLayout"
+        errorLine2="    ^"
+        quickfix="adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="9"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UseCompoundDrawables"
+        severity="Warning"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable"
+        category="Performance"
+        priority="6"
+        summary="Node can be replaced by a `TextView` with compound drawables"
+        explanation="A `LinearLayout` which contains an `ImageView` and a `TextView` can be more efficiently handled as a compound drawable (a single TextView, using the `drawableTop`, `drawableLeft`, `drawableRight` and/or `drawableBottom` attributes to draw one or more images adjacent to the text).
+
+If the two widgets are offset from each other with margins, this can be replaced with a `drawablePadding` attribute.
+
+There&apos;s a lint quickfix to perform this conversion in the Eclipse plugin."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^"
+        quickfix="adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_self_vuser.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="DisableBaselineAlignment"
+        severity="Warning"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance"
+        category="Performance"
+        priority="3"
+        summary="Missing `baselineAligned` attribute"
+        explanation="When a LinearLayout is used to distribute the space proportionally between nested layouts, the baseline alignment property should be turned off to make the layout computation faster."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="DisableBaselineAlignment"
+        severity="Warning"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance"
+        category="Performance"
+        priority="3"
+        summary="Missing `baselineAligned` attribute"
+        explanation="When a LinearLayout is used to distribute the space proportionally between nested layouts, the baseline alignment property should be turned off to make the layout computation faster."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;fill_parent&quot;"
+        errorLine2="^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_child.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="DisableBaselineAlignment"
+        severity="Warning"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance"
+        category="Performance"
+        priority="3"
+        summary="Missing `baselineAligned` attribute"
+        explanation="When a LinearLayout is used to distribute the space proportionally between nested layouts, the baseline alignment property should be turned off to make the layout computation faster."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_null.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1="        android:layout_width=&quot;wrap_content&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="10"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `fill_parent` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1="            android:layout_width=&quot;fill_parent&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1=" &lt;RelativeLayout android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;"
+        errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_child.xml"
+            line="5"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1="        android:layout_width=&quot;wrap_content&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_null.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1="        android:layout_width=&quot;wrap_content&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_title.xml"
+            line="17"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1="          android:layout_width=&quot;wrap_content&quot;"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\send_to_wx.xml"
+            line="24"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="NestedWeights"
+        severity="Warning"
+        message="Nested weights are bad for performance"
+        category="Performance"
+        priority="3"
+        summary="Nested layout weights"
+        explanation="Layout weights require a widget to be measured twice. When a LinearLayout with non-zero weights is nested inside another LinearLayout with non-zero weights, then the number of measurements increase exponentially."
+        errorLine1="            android:layout_weight=&quot;1&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="23"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        severity="Warning"
+        message="Possible overdraw: Root element paints background `@drawable/btn_style_alert_dialog_background` with a theme that also paints a background (inferred theme is `@android:style/Theme.Holo`)"
+        category="Performance"
+        priority="3"
+        summary="Overdraw: Painting regions more than once"
+        explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.
+
+NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.
+
+If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.
+
+Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.
+"
+        errorLine1=" android:background=&quot;@drawable/btn_style_alert_dialog_background&quot;>"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\alert_dialog_menu_layout.xml"
+            line="8"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        severity="Warning"
+        message="Possible overdraw: Root element paints background `@drawable/mm_title_bg` with a theme that also paints a background (inferred theme is `@android:style/Theme.Holo`)"
+        category="Performance"
+        priority="3"
+        summary="Overdraw: Painting regions more than once"
+        explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.
+
+NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.
+
+If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.
+
+Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.
+"
+        errorLine1="    android:background=&quot;@drawable/mm_title_bg&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_title.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.blue` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;blue&quot;>#ffccddff&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\color.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.grey` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;grey&quot;>#58616d&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\color.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.darkgrey` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;darkgrey&quot;>#ff404040&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\color.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.toasterro` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;toasterro&quot;>#9fd524&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\color.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.lightgrey` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;lightgrey&quot;>#ff888888&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\color.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.lightransparent` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;lightransparent&quot;>#a0000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\color.xml"
+            line="12"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.LargestTextSize` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;LargestTextSize&quot;>30dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.ChattingTextSize` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;ChattingTextSize&quot;>16dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.ChattingContentMinHeight` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;ChattingContentMinHeight&quot;>49dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="11"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.ConversationItemHeight` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;ConversationItemHeight&quot;>58dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="13"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.dimen.LargeAvatarSize` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;dimen name=&quot;LargeAvatarSize&quot;>56dp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\dimens.xml"
+            line="14"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_dialog_long_click` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_dialog_long_click.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_first_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_first_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_first_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_first_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_last_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_last_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_last_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_last_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_one_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_one_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_one_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_one_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_single_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_single_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_single_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_single_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_top_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_top_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_preference_top_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\ic_preference_top_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.image_button` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\image_button.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mm_actbtn_text` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\color\mm_actbtn_text.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_activity` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;FrameLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_activity.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_checkbox_mini` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\mm_checkbox_mini.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_checkbox_mini_checked` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_checkbox_mini_checked.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_checkbox_mini_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_checkbox_mini_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mm_choice_text_color` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\color\mm_choice_text_color.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_edit` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\mm_edit.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_edit_focused` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_edit_focused.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_edit_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_edit_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_example_ui` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_example_ui.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mm_list_textcolor_one` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\color\mm_list_textcolor_one.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mm_list_textcolor_time` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\color\mm_list_textcolor_time.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mm_list_textcolor_two` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\color\mm_list_textcolor_two.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_content_choice` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_choice.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_content_domainmail` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmail.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_content_domainmaillist` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_content_keyvalue` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_image` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_image.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_info` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_info.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_list_content` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_list_content.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_null` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_null.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_self_vuser` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_self_vuser.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_submenu` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;ImageView"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_submenu.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_preference_widget_empty` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_widget_empty.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.mm_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_title.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_act_btn_disable` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_act_btn_disable.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_act_btn_focused` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_act_btn_focused.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_act_btn_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_act_btn_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_act_btn_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_act_btn_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_back_focused` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_back_focused.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_back_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_back_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_back_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_back_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_bg` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_bg.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_btn_back` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\mm_title_btn_back.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_btn_focused` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_btn_focused.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_btn_normal` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_btn_normal.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_btn_pressed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi\mm_title_btn_pressed.9.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.mm_title_btn_right` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\mm_title_btn_right.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mm_title_btn_text` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\color\mm_title_btn_text.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.preference_first_item` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\preference_first_item.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.preference_last_item` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\preference_last_item.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.preference_one_item` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;selector"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable\preference_one_item.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.security_image` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;com.tencent.mm.sdk.uikit.applet.SecurityImage xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\security_image.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.sendrequest_dialog` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\sendrequest_dialog.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_back` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_back&quot;>返回&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="4"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_continue` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_continue&quot;>继续&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_tip` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_tip&quot;>提示&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="8"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_send` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_send&quot;>发送&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="9"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_set` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_set&quot;>设置&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="10"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_save` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_save&quot;>保存&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="11"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_delete` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_delete&quot;>删除&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_nextstep` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_nextstep&quot;>下一步&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="13"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_prevstep` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_prevstep&quot;>上一步&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="14"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_finish` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_finish&quot;>完成&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="15"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_find` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_find&quot;>查找&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="16"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.app_edit` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;app_edit&quot;>编辑&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="17"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.applet_secimg_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;applet_secimg_title&quot;>填写验证码&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.applet_secimg_change` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;applet_secimg_change&quot;>换一张图片&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="21"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.applet_seccode_tip` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;applet_seccode_tip&quot;>验证码不能为空&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="22"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.applet_seccode_fail_tip` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;applet_seccode_fail_tip&quot;>验证码错误，请重新输入&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="23"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.verify_password_null_tip` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;verify_password_null_tip&quot;>密码不能为空，请输入密码&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="26"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_date` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_date&quot;>M月d日&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="29"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_longdate` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_longdate&quot;>yyyy年M月d日&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="30"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_datetime` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_datetime&quot; formatted=&quot;false&quot;>M月d日 %skk:mm&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="31"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_patime` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_patime&quot;>kk:mm&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="32"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_longtime` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_longtime&quot; formatted=&quot;false&quot;>yyyy年M月d日 %skk:mm&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="33"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_in60min` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_in60min&quot; formatted=&quot;false&quot;>%d分钟前&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="34"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_justnow` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_justnow&quot;>1分钟内&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="35"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_dawn` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_dawn&quot;>凌晨&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="36"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_morning` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_morning&quot;>早上&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="37"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_noon` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_noon&quot;>中午&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_afternoon` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_afternoon&quot;>下午&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="39"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_evening` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_evening&quot;>晚上&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="40"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_pre_yesterday` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_pre_yesterday&quot;>昨天&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="41"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.fmt_iap_err` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;fmt_iap_err&quot; formatted=&quot;false&quot;>网络连接不可用，请稍候重试&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="42"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.hello` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;hello&quot;>Hello World, SDKSampleActivity!&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="44"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.send_to_wx_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;send_to_wx_title&quot;>发送到微信&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="54"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.get_from_wx_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1=" &lt;string name=&quot;get_from_wx_title&quot;>从微信接收&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="55"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.show_from_wx_title` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1=" &lt;string name=&quot;show_from_wx_title&quot;>显示微信请求的消息&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="56"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.send_pic` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1=" &lt;string name=&quot;send_pic&quot;>发送照片&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="79"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.array.send_emoji_item_format` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1=" &lt;string-array name=&quot;send_emoji_item_format&quot;>"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="111"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.register_as_weixin_app_sender` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;register_as_weixin_app_sender&quot;>注册微信事件发送器&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\strings.xml"
+            line="124"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMTitle` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMTitle&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="15"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMTitleButton` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMTitleButton&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="25"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMFooter` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMFooter&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="34"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMBody` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMBody&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="41"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMScroll` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMScroll&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="53"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMBlock` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMBlock&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="61"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMSplit` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMSplit&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="67"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLabelSplit` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLabelSplit&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="74"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMEditText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMEditText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="81"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLine` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLine&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="92"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLineEditText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLineEditText&quot; parent=&quot;@style/MMEditText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="99"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMMultiLineEditText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMMultiLineEditText&quot; parent=&quot;@style/MMLineEditText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="103"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLineEditPass` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLineEditPass&quot; parent=&quot;@style/MMLineEditText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="109"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMBriefText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMBriefText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="152"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLabel` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLabel&quot; parent=&quot;MMBriefText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="164"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLineLabel` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLineLabel&quot; parent=&quot;MMLabel&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="168"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMLogin` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMLogin&quot; parent=&quot;MMLabel&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="174"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMDivider` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMDivider&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="180"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMListItem` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMListItem&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="186"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMFriendListItem` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMFriendListItem&quot; parent=&quot;MMListItem&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="198"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMListCatalog` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMListCatalog&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="205"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChoicePreferenceButton` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChoicePreferenceButton&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="219"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMFontTitleInList` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMFontTitleInList&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="229"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMFontTipInList` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMFontTipInList&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="245"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.MMFontTimeInList` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;MMFontTimeInList&quot; parent=&quot;MMFontTipInList&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="255"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUISplit` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUISplit&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="313"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="332"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIFMessageText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIFMessageText&quot; parent=&quot;ChattingUIText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="343"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIVoiceLength` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIVoiceLength&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="348"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIMailSenderText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIMailSenderText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="362"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUISenderText` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUISenderText&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="373"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIContent` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIContent&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="390"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIThumbnail` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIThumbnail&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="399"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUIWordCount` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUIWordCount&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="405"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.ChattingUISystem` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;ChattingUISystem&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\styles.xml"
+            line="412"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.style.noBgFullScreen` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;style name=&quot;noBgFullScreen&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\values\themes.xml"
+            line="110"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-hdpi`: ic_launcher.png (found in drawable-mdpi)"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-hdpi"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-mdpi`: btn_check_off_disable.png, btn_check_off_normal.png, btn_check_on_disable.png, btn_check_on_normal.png, btn_style_alert_dialog_background.9.png... (46 more)"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\drawable-mdpi"/>
+    </issue>
+
+    <issue
+        id="IconMissingDensityFolder"
+        severity="Warning"
+        message="Missing density variation folders in `src\main\res`: drawable-xhdpi, drawable-xxhdpi, drawable-xxxhdpi"
+        category="Usability:Icons"
+        priority="3"
+        summary="Missing density folder"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra-high, extra-extra-high). This lint check identifies folders which are missing, such as `drawable-hdpi`.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="    &lt;ImageView"
+        errorLine2="    ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\image_button.xml"
+            line="11"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="        &lt;ImageView"
+        errorLine2="        ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="23"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="    &lt;ImageView"
+        errorLine2="    ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="29"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1=" &lt;ImageView"
+        errorLine2=" ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_image.xml"
+            line="9"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="&lt;ImageView"
+        errorLine2="^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_screen.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1=" &lt;ImageView"
+        errorLine2=" ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_self_vuser.xml"
+            line="8"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="&lt;ImageView"
+        errorLine2="^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_submenu.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.
+
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.
+
+Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="                &lt;ImageView"
+        errorLine2="                ^"
+        quickfix="studio,adt">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\security_image.xml"
+            line="24"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="RtlSymmetry"
+        severity="Warning"
+        message="When you define `paddingLeft` you should probably also define `paddingRight` for right-to-left symmetry"
+        category="Internationalization:Bidirectional Text"
+        priority="6"
+        summary="Padding and margin symmetry"
+        explanation="If you specify padding or margin on the left side of a layout, you should probably also specify padding on the right side (and vice versa) for right-to-left layout symmetry."
+        errorLine1=" android:paddingLeft=&quot;6dp&quot;>"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmail.xml"
+            line="10"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginEnd=&quot;4sp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:layout_marginRight=&quot;4sp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:gravity=&quot;left|center_vertical&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="14"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;6dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="            android:layout_marginLeft=&quot;6dp&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="22"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:gravity=&quot;right|center_vertical&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference.xml"
+            line="38"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginEnd=&quot;4dip&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:layout_marginRight=&quot;4dip&quot;"
+        errorLine2="                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_checkbox.xml"
+            line="3"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;20sp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="  android:layout_marginLeft=&quot;20sp&quot; android:layout_weight=&quot;1&quot;>"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_child.xml"
+            line="6"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_alignStart=&quot;@android:id/title&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="   android:layout_below=&quot;@android:id/title&quot; android:layout_alignLeft=&quot;@android:id/title&quot; android:maxLines=&quot;2&quot;"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_child.xml"
+            line="10"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:gravity=&quot;left|center_vertical&quot;>"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_choice.xml"
+            line="7"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;14dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="  android:layout_marginLeft=&quot;14dp&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_choice.xml"
+            line="11"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:gravity=&quot;left|center_vertical&quot;"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmail.xml"
+            line="7"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:paddingStart=&quot;6dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:paddingLeft=&quot;6dp&quot;>"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmail.xml"
+            line="10"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:gravity=&quot;left|center_vertical&quot;>"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="10"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;6dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="   android:layout_marginLeft=&quot;6dp&quot;"
+        errorLine2="   ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="21"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;79dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="  android:layout_marginLeft=&quot;79dp&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="32"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;79dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="  android:layout_marginLeft=&quot;79dp&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_domainmaillist.xml"
+            line="38"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginStart=&quot;6dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:layout_marginLeft=&quot;6dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:gravity=&quot;left&quot;"
+        errorLine2="                         ~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_content_keyvalue.xml"
+            line="13"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:gravity=&quot;left|center_vertical&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_null.xml"
+            line="12"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:gravity=&quot;right|center_vertical&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_null.xml"
+            line="23"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginEnd=&quot;2dip&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:layout_marginRight=&quot;2dip&quot;"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_screen.xml"
+            line="6"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:layout_gravity=&quot;right|center_vertical&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_screen.xml"
+            line="7"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="  android:gravity=&quot;right&quot;"
+        errorLine2="                   ~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_self_vuser.xml"
+            line="19"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider adding `android:layout_marginEnd=&quot;2dip&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:layout_marginRight=&quot;2dip&quot;"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_submenu.xml"
+            line="6"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
+For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
+(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1=" android:layout_gravity=&quot;right|center_vertical&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="E:\Learn\AndroidStudioProjects\WeChatShare\app\src\main\res\layout\mm_preference_submenu.xml"
+            line="7"
+            column="26"/>
+    </issue>
+
+</issues>
